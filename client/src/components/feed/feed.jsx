@@ -63,7 +63,13 @@ class Feed extends React.Component {
                   return (
                     <div>
                       <div className="tweet">
-                        <div className="tweet-author">{tweet.author.name}</div>
+                        <div className="tweet-author">
+                          <img
+                            className="author-icon"
+                            src={require("./user-icon.png")}
+                          />
+                          {tweet.author.name}
+                        </div>
                         <div className="tweet-text">{tweet.text}</div>
                       </div>
                     </div>

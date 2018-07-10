@@ -52,6 +52,9 @@ class CreateTweet extends React.Component {
                     ref={node => {
                       input = node
                     }}
+                    type="text"
+                    className="input"
+                    placeholder="What's happening?"
                   />
 
                   <button type="submit">Tweet</button>

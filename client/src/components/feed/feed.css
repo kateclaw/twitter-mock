@@ -38,3 +38,8 @@
 .loader {
   padding: 5px;
 }
+
+.author-icon {
+  height: 40px;
+  margin-right: 10px;
+}

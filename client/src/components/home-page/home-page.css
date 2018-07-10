@@ -5,12 +5,12 @@
 
 .app {
   position: absolute;
-  width: 100%;
   background-color: #e5ecf0;
+  width: 100%;
 }
 
 .feeder {
-  margin-left: 10px;
-  margin-right: 10px;
+  margin-left: 200px;
+  margin-right: 200px;
   margin-top: 60px;
 }
