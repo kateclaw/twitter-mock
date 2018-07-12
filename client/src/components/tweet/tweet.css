@@ -1,0 +1,97 @@
+.tweet {
+  background-color: #ffffff;
+  padding: 10px;
+  border-bottom: 0.05px solid #e5ecf0;
+  height: 300px;
+  width: 70%;
+  display: block;
+  margin: auto;
+}
+
+.tweet:hover {
+  background-color: #f4f8fa;
+  cursor: pointer;
+}
+
+.tweet-author {
+  display: flex;
+  align-items: center;
+}
+
+.tweet-author:hover {
+  color: #1da1f2;
+  text-decoration: underline;
+}
+
+.tweet-author-text {
+  font-weight: bold;
+  text-align: left;
+  margin-bottom: 10px;
+}
+
+.author-icon {
+  height: 50px;
+  margin-right: 10px;
+  float: left;
+}
+
+.tweet-text {
+  margin-top: 10%;
+}
+
+.loader {
+  padding: 5px;
+}
+
+/************************************/
+
+.popup {
+  width: 60%;
+  height: 300px;
+  position: absolute;
+  background-color: #ffffff;
+  margin-top: 150px;
+}
+
+.popup-icon {
+  height: 50px;
+  float: left;
+  padding: 10px;
+  box-sizing: unset;
+  margin-left: 20px;
+}
+
+.popup-author {
+  display: flex;
+  align-items: center;
+}
+
+.popup-author-text {
+  text-align: left;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.popup-text {
+  margin-top: 10%;
+  position: absolute;
+}
+
+.close-icon {
+  float: right;
+  border: none;
+  margin-right: 4px;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.75);
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}

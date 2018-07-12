@@ -1,0 +1,14 @@
+.holder {
+  width: 233px;
+  height: 213px;
+  background-color: #009df6;
+  display: inline-block;
+  margin-top: 60px;
+  float: left;
+  position: relative;
+}
+
+.profile-pic {
+  height: 100px;
+  float: left;
+}

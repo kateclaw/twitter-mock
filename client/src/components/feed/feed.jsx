@@ -2,11 +2,12 @@ import * as React from "react"
 import gql from "graphql-tag"
 import { Query } from "react-apollo"
 import CreateTweet from "../create-tweet/create-tweet"
+import Tweet from "../tweet/tweet"
 import "./feed.css"
 
 const GET_TWEETS = gql`
   query {
-    feed(orderBy: "createdAt_DESC") {
+    feed(orderBy: createdAt_DESC) {
       id
       text
       author {
@@ -54,25 +55,18 @@ class Feed extends React.Component {
             }
 
             return (
-              <div className="tweet-container">
+              <div className="feed-container">
                 <div className="form">
                   <CreateTweet refetchTweetFeed={refetch} />
                 </div>
 
                 {data.feed.map(tweet => {
                   return (
-                    <div>
-                      <div className="tweet">
-                        <div className="tweet-author">
-                          <img
-                            className="author-icon"
-                            src={require("./user-icon.png")}
-                          />
-                          {tweet.author.name}
-                        </div>
-                        <div className="tweet-text">{tweet.text}</div>
-                      </div>
-                    </div>
+                    <Tweet
+                      key={tweet.id}
+                      text={tweet.text}
+                      author={tweet.author}
+                    />
                   )
                 })}
                 <div className="empty" />

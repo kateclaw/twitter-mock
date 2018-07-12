@@ -1,45 +1,4 @@
-.tweet-container {
-  background-color: #e5ecf0;
-  /* position: relative; */
+.feed-container {
+  /* background-color: #e5ecf0; */
   width: 100%;
-}
-
-.tweet {
-  background-color: #ffffff;
-  /* margin-left: 10px;
-  margin-right: 10px; */
-  padding: 10px;
-  border-bottom: 0.05px solid #e5ecf0;
-  height: 300px;
-}
-
-.tweet:hover {
-  background-color: #f4f8fa;
-  cursor: pointer;
-}
-
-.tweet-author {
-  float: left;
-  font-weight: bold;
-}
-
-.tweet-author:hover {
-  color: #1da1f2;
-  text-decoration: underline;
-}
-
-.tweet-text {
-  margin-top: 25px;
-  margin-bottom: 25px;
-  margin-left: 20px;
-  margin-right: 20px;
-}
-
-.loader {
-  padding: 5px;
-}
-
-.author-icon {
-  height: 40px;
-  margin-right: 10px;
 }

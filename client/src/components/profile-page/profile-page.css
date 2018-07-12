@@ -1,0 +1,36 @@
+* {
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue",
+    Helvetica, Arial, "Lucida Grande", sans-serif;
+}
+
+.app {
+  position: absolute;
+  background-color: #e5ecf0;
+  width: 100%;
+}
+
+.container {
+  margin-top: 50px;
+}
+
+.profile-feeder {
+  /* margin-left: 200px;
+  margin-right: 200px;
+  margin-top: -10px; */
+  width: 100%;
+  margin-top: 60px;
+  display: flex;
+  justify-content: center;
+}
+
+.user-header {
+  /* width: 100%; */
+  margin-left: 200px;
+  margin-right: 200px;
+  background-color: #e3f5ff;
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: normal;
+}
