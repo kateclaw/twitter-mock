@@ -6,8 +6,8 @@ import Tweet from "../tweet/tweet"
 import "./profile-page.css"
 
 const GET_TWEETS = gql`
-  query getTweets($where: TweetWhereInput) {
-    feed(orderBy: createdAt_DESC, where: $where) {
+  query getTweets($username: String!) {
+    userFeed(orderBy: createdAt_DESC, username: $username) {
       id
       text
       author {
@@ -25,7 +25,7 @@ class ProfilePage extends React.Component {
       username: this.props.match.params
     })
     return (
-      <div className="app">
+      <div className="profile-page">
         <Navigation history={this.props.history} />
         <div className="container">
           <h1 className="user-header">{this.props.match.params.username}</h1>
@@ -33,15 +33,11 @@ class ProfilePage extends React.Component {
           <div className="profile-feeder">
             <Query
               variables={{
-                where: {
-                  author: {
-                    email: this.props.match.params.email
-                  }
-                }
+                username: this.props.match.params.username
               }}
               query={GET_TWEETS}
             >
-              {({ loading, error, data, refetch }) => {
+              {({ loading, error, data }) => {
                 if (loading) {
                   return (
                     <img
@@ -58,7 +54,7 @@ class ProfilePage extends React.Component {
 
                 return (
                   <div className="tweet-container">
-                    {data.feed.map(tweet => {
+                    {data.userFeed.map(tweet => {
                       return (
                         <Tweet
                           key={tweet.id}

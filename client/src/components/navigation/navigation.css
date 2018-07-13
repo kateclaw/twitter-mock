@@ -12,6 +12,10 @@
   position: absolute;
 }
 
+button:hover {
+  cursor: pointer;
+}
+
 ul {
   float: left;
   text-decoration: none;
@@ -28,17 +32,16 @@ li {
   font-size: 13px;
 }
 
-li:hover {
-  color: #1da1f2;
-  border-bottom: 2px solid #1da1f2;
+.link {
+  text-decoration: none;
+  color: #617787;
 }
 
-.home {
+.home:hover,
+.profile:hover,
+.login:hover {
   color: #1da1f2;
   border-bottom: 2px solid #1da1f2;
-}
-
-.home:hover {
   cursor: pointer;
 }
 
@@ -46,65 +49,76 @@ li:hover {
   max-height: 18px;
   margin-right: 5px;
   background-image: url("./home-icon.png");
-  /* position: relative; */
 }
 
 .home-icon:hover {
-  /* display: inline; */
   background-image: url("./home-icon-blue.png");
 }
 
-.notifications:hover {
-  cursor: pointer;
-}
-
-.notification-icon {
+.profile-icon {
   max-height: 18px;
   margin-right: 5px;
 }
 
-.messages:hover {
-  cursor: pointer;
-}
-
-.message-icon {
+.login-icon {
   max-height: 18px;
   margin-right: 5px;
+}
+
+.logout {
+  border: none;
+  color: #617787;
+  font-weight: bold;
+}
+
+.logout:hover {
+  cursor: pointer;
 }
 
 .bird-icon {
   max-height: 30px;
-  /* float: left; */
   margin-left: 20px;
   margin-top: 10px;
+  margin-right: 20px;
+  /* float: right; */
 }
 
-.nav-name {
-  float: left;
-  color: #1da1f2;
-  margin-left: 20px;
+.right-menu {
+  display: flex;
+  align-items: center;
+  margin-top: 8px;
 }
 
-.search {
+.search-form {
+  display: inline;
+}
+
+.search-input {
   border-radius: 100px;
-  color: #cad6de;
+  border: 0.35px solid #617787;
+  color: #617787;
   background-color: #f4f8fa;
   width: 200px;
   height: 32px;
-  float: right;
-  margin-top: 8px;
-  margin-right: 10px;
-  text-align: left;
-  font-size: 12px;
+  font-size: 14px;
 }
 
-.search:hover {
-  cursor: text;
+.search-button {
+  border: none;
+  margin-left: -40px;
+  background-color: #f4f8fa;
+}
+
+.search-icon {
+  height: 18px;
+  display: inline-block;
+  position: relative;
+  margin-top: -3px;
 }
 
 .user-icon {
   height: 40px;
-  margin-top: 8px;
+  display: inline;
   margin-right: 10px;
   float: right;
 }
@@ -118,16 +132,21 @@ li:hover {
   background-color: #1da1f2;
   border: none;
   border-radius: 100px;
-  margin-top: 7px;
+  display: inline;
   margin-right: 20px;
   color: white;
   padding: 6px 16px;
   font-weight: bold;
   position: relative;
   height: 35px;
+  font-size: 16px;
 }
 
 .tweetButton:hover {
   background-color: #0798ee;
-  cursor: pointer;
+}
+
+.right-menu {
+  display: inline;
+  float: right;
 }

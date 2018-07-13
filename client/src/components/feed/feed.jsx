@@ -13,26 +13,11 @@ const GET_TWEETS = gql`
       author {
         id
         name
+        username
       }
     }
   }
 `
-
-// interface Data {
-//   tweets: Array<Tweet>
-// }
-
-// interface Tweet {
-//   id: string
-//   text: string
-//   author: User
-// }
-
-// interface User {
-//   id: string
-//   name: string
-//   email: string
-// }
 
 class Feed extends React.Component {
   render() {
@@ -66,6 +51,7 @@ class Feed extends React.Component {
                       key={tweet.id}
                       text={tweet.text}
                       author={tweet.author}
+                      history={this.props.history}
                     />
                   )
                 })}

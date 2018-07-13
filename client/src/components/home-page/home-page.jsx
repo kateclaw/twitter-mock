@@ -5,15 +5,12 @@ import Feed from "../feed/feed"
 import "./home-page.css"
 
 class HomePage extends React.Component {
-  public render() {
+  render() {
     return (
       <div className="app">
-        <Navigation />
-        {/* <div className="user-stuff">
-          <User />
-        </div> */}
+        <Navigation history={this.props.history} />
         <div className="feeder">
-          <Feed />
+          <Feed history={this.props.history} />
         </div>
       </div>
     )

@@ -3,34 +3,33 @@
     Helvetica, Arial, "Lucida Grande", sans-serif;
 }
 
-.app {
+.profile-page {
   position: absolute;
   background-color: #e5ecf0;
   width: 100%;
+  height: 100%;
 }
 
 .container {
-  margin-top: 50px;
-}
-
-.profile-feeder {
-  /* margin-left: 200px;
-  margin-right: 200px;
-  margin-top: -10px; */
   width: 100%;
-  margin-top: 60px;
+  margin-top: 50px;
   display: flex;
   justify-content: center;
+  flex-direction: column;
 }
 
 .user-header {
-  /* width: 100%; */
-  margin-left: 200px;
-  margin-right: 200px;
+  width: 70%;
   background-color: #e3f5ff;
-  height: 300px;
+  height: 200px;
+  font-weight: normal;
+  margin: auto;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-weight: normal;
+}
+
+.profile-feeder {
+  margin-top: 10px;
+  width: 100%;
 }

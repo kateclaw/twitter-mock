@@ -5,6 +5,8 @@ type Query {
   feed(orderBy: TweetOrderByInput, where: TweetWhereInput): [Tweet!]!
   tweet(id: ID!): Tweet
   getTweet(id: ID!): Tweet!
+  userFeed(orderBy: TweetOrderByInput, username: String): [Tweet]
+  myFeed(orderBy: TweetOrderByInput, email: String): [Tweet]
 }
 
 type Mutation {
@@ -12,7 +14,7 @@ type Mutation {
     email: String!
     password: String!
     name: String!
-    username: String!
+    username: String
   ): AuthPayload!
   login(email: String!, password: String!): AuthPayload!
   createTweet(text: String, author: String): Tweet

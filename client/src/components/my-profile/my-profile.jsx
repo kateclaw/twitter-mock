@@ -5,15 +5,12 @@ import Navigation from "../navigation/navigation"
 import Tweet from "../tweet/tweet"
 
 const GET_MY_PROFILE = gql`
-  query getMyProfile {
-    me {
-      id
-      name
-      email
-      feed {
-        id
-        text
+  query getMyProfile($email: String) {
+    myFeed(orderBy: createdAt_DESC, email: $email) {
+      author {
+        name
       }
+      text
     }
   }
 `
@@ -21,34 +18,47 @@ const GET_MY_PROFILE = gql`
 class MyProfile extends React.Component {
   render() {
     return (
-      <div>
-        <Navigation />
-        <div className="profile-page">
-          <h1>THIS IS THE PROFILE PAGE {this.props.match.params.username}</h1>
+      <div className="profile-page">
+        <Navigation history={this.props.history} />
+        <div className="container">
+          <h1 className="user-header">My Profile</h1>
 
-          <Query query={GET_MY_PROFILE}>
-            {({ loading, error, data, refetch }) => {
-              if (loading) {
-                return "LOading..."
-              }
-              if (error) {
-                return "OOps, somehing blew up."
-              }
-              return (
-                <div>
-                  {data.me.tweets.map(tweet => {
-                    return (
-                      <Tweet
-                        key={tweet.id}
-                        text={tweet.text}
-                        author={tweet.author}
-                      />
-                    )
-                  })}
-                </div>
-              )
-            }}
-          </Query>
+          <div className="profile-feeder">
+            <Query
+              variables={{
+                email: localStorage.getItem("email")
+              }}
+              query={GET_MY_PROFILE}
+            >
+              {({ loading, error, data }) => {
+                if (loading) {
+                  return (
+                    <img
+                      src={require("./loader.gif")}
+                      className="loader"
+                      alt="loader"
+                    />
+                  )
+                }
+                if (error) {
+                  return "OOps, somehing blew up."
+                }
+                return (
+                  <div className="tweet-container">
+                    {data.myFeed.map(tweet => {
+                      return (
+                        <Tweet
+                          key={tweet.id}
+                          text={tweet.text}
+                          author={tweet.author}
+                        />
+                      )
+                    })}
+                  </div>
+                )
+              }}
+            </Query>
+          </div>
         </div>
       </div>
     )

@@ -11,15 +11,22 @@
   background-color: #ffffff;
   width: 70%;
   height: 50%;
-  display: block;
   margin-top: 60px;
 }
 
-.login-form {
-  margin-top: 100px;
-  margin-left: 25%;
-  display: block;
+.flexpls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 100%;
+  /* flex-direction: column; */
+}
+
+.login-form {
+  /* margin-top: 100px; */
+  /* margin-left: 35%; */
+  display: block;
+  /* width: 100%; */
 }
 
 .login-button {
@@ -37,7 +44,7 @@
 }
 
 .login-button:hover {
-  background-color: #0798ee;
+  background-color: #008ddd;
   cursor: pointer;
 }
 

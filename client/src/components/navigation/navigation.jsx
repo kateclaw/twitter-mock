@@ -1,93 +1,134 @@
 import * as React from "react"
-// import * as Popup from "reactjs-popup"
+import { Link } from "react-router-dom"
 import "./navigation.css"
 
 class Navigation extends React.Component {
+  // constructor(props) {
+  //   super(props)
+  //   this.state = { clicked: false }
+  //   this.popup = this.popup.bind(this)
+  //   this.close = this.close.bind(this)
+  // }
+
+  state = {
+    search: ""
+  }
+
+  // popup() {
+  //   this.setState({ clicked: true })
+  // }
+
+  // close() {
+  //   this.setState({ clicked: false })
+  // }
+
+  onSearch = () => {
+    this.props.history.push(`/${this.state.search}`)
+  }
+
+  onLogout = () => {
+    localStorage.removeItem("token")
+    this.props.history.push("/login")
+  }
+
+  // onTweet = () => {
+  //   if (this.state.clicked) {
+  //     return (
+  //       <div className="overlay">
+  //         <div className="popup">
+  //           <button className="close-icon" onClick={this.close}>
+  //             x
+  //           </button>
+  //           <CreateTweet />
+  //         </div>
+  //       </div>
+  //     )
+  //   } else {
+  //     return <button className="tweetButton">Tweet</button>
+  //   }
+  // }
+
   render() {
+    const token = localStorage.getItem("token")
+
     return (
       <div className="header">
         <header className="navigation">
           <ul className="menu">
             <li className="home">
+              <img src={require("./home-icon.png")} className="home-icon" />
+              <Link className="link" to="/home">
+                Home
+              </Link>
+            </li>
+            <li className="profile">
               <img
-                src={require("./home-icon-blue.png")}
-                className="home-icon"
+                src={require("./profile-icon.png")}
+                className="profile-icon"
               />
-              Home
+              <Link className="link" to="/myprofile">
+                Profile
+              </Link>
             </li>
-            <li
-              className="notifications"
-              onClick={() => {
-                window.confirm("lol sorry this doesn't work yet")
-              }}
-            >
-              <img
-                src={require("./notification-icon.png")}
-                className="notification-icon"
-              />Notifications
-            </li>
-            <li
-              className="messages"
-              onClick={() => {
-                window.confirm("lol sorry this doesn't work yet")
-              }}
-            >
-              <img
-                src={require("./message-icon.png")}
-                className="message-icon"
-              />Messages
+            <li className="login">
+              <img src={require("./login-icon.png")} className="login-icon" />
+              {token ? (
+                <button className="logout" onClick={this.onLogout}>
+                  Log out
+                </button>
+              ) : (
+                <Link className="link" to="/login">
+                  Log in
+                </Link>
+              )}
             </li>
           </ul>
+
           <img
             src={require("./bird-icon.png")}
             className="bird-icon"
             alt="bird-icon"
           />
-          {/* <h2 className="nav-name">Tweeter</h2> */}
-          <button
-            className="tweetButton"
-            onClick={() => {
-              window.confirm("lol sorry this doesn't work yet")
-            }}
-          >
-            Tweet
-          </button>
-
-          <img
-            src={require("./user-icon.png")}
-            className="user-icon"
-            onClick={() => {
-              window.confirm("lol sorry this doesn't work yet")
-            }}
-          />
-
-          {/* <Popup
-            trigger={<button className="search">Search Twitter</button>}
-            // modal
-            // contentStyle={contentStyle}
-          >
-            {close => (
-              <div className="modal">
-                <a className="close" onClick={close}>
-                  &times;
-                </a>
-                <div className="header"> Modal Title </div>
-                <div className="content">
-                  {" "}
-                  Call to "createTweet" component will go here so a tweet form will pop up (theoretically)
-                </div>
-              </div>
-            )}
-          </Popup> */}
-
-          <button
-            className="search"
-            onClick={() => {
-              window.confirm("lol sorry this doesn't work yet")
-            }}
-          >
-            Search Twitter
-          </button>
+          <ul className="right-menu">
+            <li>
+              <button
+                className="tweetButton"
+                onClick={() => {
+                  window.confirm("lol sorry this doesn't work yet")
+                }}
+                // onClick={() => {
+                //   this.onTweet
+                // }}
+              >
+                Tweet
+              </button>
+            </li>
+            <li>
+              <Link className="link" to="/myprofile">
+                <img src={require("./user-icon.png")} className="user-icon" />
+              </Link>
+            </li>
+            <li>
+              <form className="search-form">
+                <input
+                  className="search-input"
+                  type="text"
+                  placeholder="Search Tweeter"
+                  onChange={e => this.setState({ search: e.target.value })}
+                />
+                <button
+                  className="search-button"
+                  type="submit"
+                  onClick={this.onSearch}
+                >
+                  <img
+                    className="search-icon"
+                    src={require("./search-icon.png")}
+                  />
+                </button>
+              </form>
+            </li>
+          </ul>
         </header>
       </div>
     )
