@@ -10,12 +10,8 @@
 }
 
 .feeder {
-  /* margin-left: 200px;
-  margin-right: 200px; */
   width: 100%;
   margin-top: 60px;
   display: flex;
   justify-content: center;
-  /* margin-right: auto;
-  margin-left: auto; */
 }

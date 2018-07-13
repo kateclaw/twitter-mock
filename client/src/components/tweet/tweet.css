@@ -44,6 +44,7 @@
 
 .tweet-text {
   margin-top: 10%;
+  width: 90%;
 }
 
 .loader {
@@ -76,6 +77,10 @@
   margin-top: 15px;
 }
 
+.popup-author-info:hover {
+  cursor: pointer;
+}
+
 .popup-author-text {
   text-align: left;
   font-weight: bold;
@@ -90,6 +95,7 @@
   display: block;
   position: absolute;
   font-size: 14px;
+  background-color: #ffffff;
 }
 
 .popup-text {

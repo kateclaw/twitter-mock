@@ -3,6 +3,8 @@ import gql from "graphql-tag"
 import { Query } from "react-apollo"
 import Navigation from "../navigation/navigation"
 import Tweet from "../tweet/tweet"
+import Feed from "../feed/feed"
+
 import "./profile-page.css"
 
 const GET_TWEETS = gql`

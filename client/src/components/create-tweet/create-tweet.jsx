@@ -32,7 +32,6 @@ class CreateTweet extends React.Component {
                     e.preventDefault()
                     await createTweet({
                       variables: {
-                        // author: "test3@me.com",
                         text: input.value
                       }
                     })
